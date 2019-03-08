@@ -108,8 +108,10 @@ fn1. Documentation of "strftime":http://php.net/strftime
 /* For internal use only... */
 function kch_INTERNAL_lastfm_api_call($function, $params)
 {
-	/* Prepare the API call */
-	$api_call_url = "http://ws.audioscrobbler.com/2.0/?method=$function";
+	/* Prepare the API call
+	/* $api_call_url = "http://ws.audioscrobbler.com/2.0/?method=$function"; */
+	/* Prepare the API call | This works perfect! */
+	$api_call_url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks";
 	$params['api_key'] = "68a0243a9eef21f92766800a084c566c";
 	foreach($params as $p_key => $p_value)
 		$api_call_url .= "&$p_key=".urlencode($p_value);
